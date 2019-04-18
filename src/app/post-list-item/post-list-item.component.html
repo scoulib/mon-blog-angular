@@ -1,0 +1,12 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success':billet.loveIts>0,
+'list-group-item-danger':billet.loveIts<0}" >
+    <h4>{{ billet.titre }}</h4>
+    <span id="date"> {{ billet.createdAt | date:'M/d/y, h:mm a' | uppercase }} </span>
+    <p>{{ billet.contenu }}</p>
+    <div class="btn-toolbar">
+      <button type="button" class="btn btn-success" (click)="onLike()">Love It</button>
+      <button type="button" class="btn btn-danger" (click)="onDisLike()">Don't Love It</button>
+      <button type="button" class="btn btn-danger fr" (click)="onDelete()">Supprimer post</button>
+    </div>
+</li>
